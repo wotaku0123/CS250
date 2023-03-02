@@ -15,7 +15,7 @@ int main()
 	cout << "Inserted: 2 4 7 8\n";
 	cout << "List is: ";
 
-    myList.deleteSecond();
+    myList.swapFirstLast();
     myList.print();
 	return 0;
 }

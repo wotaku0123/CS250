@@ -41,6 +41,21 @@ class AnyList
 		// 8. Delete the second node of the calling object.
 		void deleteSecond();
 
+		// 10. Delete the node before-last of the calling object.
+		void deleteBeforeLast();
+
+		// 12. Replace the value of the last node of the calling object with the value passed by the parameter.
+		void replaceLast(int);
+
+		// 14.Replace the value of the second-to-last node of the calling object with the value passed by the parameter.
+		void replaceSecondToLast(int);
+
+		// 16. Given two int parameters, oldValue and newValue, replace all occurrences of the oldValue with the newValue.
+		void replaceOldToNew(int, int);
+
+		// 18. Swap the first node with the last node.
+		void swapFirstLast();
+
 		void print() const;
 
 		void clearList();

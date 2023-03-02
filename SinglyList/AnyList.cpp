@@ -74,6 +74,79 @@ void AnyList::deleteSecond()
 	--count;
 }
 
+// 10. Delete the node before-last of the calling object.
+void AnyList::deleteBeforeLast()
+{
+	Node* current = first->getNext();
+	Node* tailNode = first;
+
+	while(current->getNext()->getNext() != nullptr)
+	{
+		current = current->getNext();
+		tailNode = tailNode->getNext();
+	}
+
+	tailNode->setNext(current->getNext());
+	delete current;
+	current = nullptr;
+	--count;
+}
+
+// 12. Replace the value of the last node of the calling object with the value passed by the parameter.
+void AnyList::replaceLast(int newData)
+{
+	Node* current = first;
+
+	while(current->getNext() != nullptr)
+	{
+		current = current->getNext();
+	}
+
+	current->setData(newData);
+}
+// 14.Replace the value of the second-to-last node of the calling object with the value passed by the parameter.
+void AnyList::replaceSecondToLast(int newData)
+{
+	Node* current = first;
+
+	while(current->getNext() != nullptr)
+	{
+		current = current->getNext();
+		current->setData(newData);
+	}
+}
+
+// 16. Given two int parameters, oldValue and newValue, replace all occurrences of the oldValue with the newValue.
+void AnyList::replaceOldToNew(int oldValue, int newValue)
+{
+	Node* current = first;
+
+	while(current->getNext() != nullptr)
+	{
+		if(current->getData() == oldValue)
+		{
+			current->setData(newValue);
+		}
+
+		current = current->getNext();
+	}
+}
+
+// 18. Swap the first node with the last node.
+void AnyList::swapFirstLast()
+{
+	Node* last = first;
+
+	while(last->getNext() != nullptr)
+	{
+		last = last->getNext();
+	}
+
+	int temp = first->getData();
+	first->setData(last->getData());
+	last->setData(temp);
+}
+
 void AnyList::print() const
 {
 	if (first == nullptr) 
