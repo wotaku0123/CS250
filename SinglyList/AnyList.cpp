@@ -61,6 +61,19 @@ void AnyList::insertAfterTarget(int value1, int value2)
 	}
 }
 
+// 8. Delete the second node of the calling object.
+void AnyList::deleteSecond()
+{
+	Node* current = first->getNext();
+
+	first->setNext(current->getNext());
+	
+	delete current;
+	current = nullptr;
+	
+	--count;
+}
+
 void AnyList::print() const
 {
 	if (first == nullptr) 

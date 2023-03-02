@@ -38,6 +38,9 @@ class AnyList
 		// 6. Given two int parameters, value1 and value2, insert a new node, storing value1, after the node that stores value2.
 		void insertAfterTarget(int, int);
 
+		// 8. Delete the second node of the calling object.
+		void deleteSecond();
+
 		void print() const;
 
 		void clearList();
