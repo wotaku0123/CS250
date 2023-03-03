@@ -44,6 +44,16 @@ void DoublyList::printReverse() const
     }
 }
 
+// 38. Swap the value of the first node of the calling object with the value of the first node of the parameter object
+void DoublyList::swapFirstValueOfCallAndParam(DoublyList& doublyList)
+{
+    int temp = first->getData();
+    
+    first->setData(doublyList.first->getData());
+    doublyList.first->setData(temp);
+    
+}
+
 void DoublyList::clearList()
 { 	
     DLLNode* temp = first;

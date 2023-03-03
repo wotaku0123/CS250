@@ -7,6 +7,7 @@ using namespace std;
 int main(){
 
     DoublyList intList;
+    DoublyList dllList;
 
     intList.insertFront(6);
     intList.insertFront(5);
@@ -15,11 +16,29 @@ int main(){
     intList.insertFront(2);
     intList.insertFront(1);
 
+    dllList.insertFront(10);
+    dllList.insertFront(8);
+    dllList.insertFront(6);
+    dllList.insertFront(4);
+    dllList.insertFront(2);
+
     cout << "The list has ";
     intList.printForward();
     cout << " " << endl;
 
-    intList.selectSuitor();
+    cout << "The list has ";
+    dllList.printForward();
+    cout << " " << endl;
+
+    intList.swapFirstValueOfCallAndParam(dllList);
+
+    cout << "The list has ";
+    intList.printForward();
+    cout << " " << endl;
+
+    cout << "The list has ";
+    dllList.printForward();
+    cout << " " << endl;
 
     return 0;
 }

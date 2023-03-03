@@ -32,6 +32,9 @@ public:
 
 	void printForward() const;
 	void printReverse() const;
+
+	// 38. Swap the value of the first node of the calling object with the value of the first node of the parameter object
+	void swapFirstValueOfCallAndParam(DoublyList&);
 	
 	void clearList();
 	~DoublyList();
