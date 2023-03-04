@@ -147,6 +147,33 @@ void AnyList::swapFirstLast()
 	last->setData(temp);
 }
 
+// 20. Swap the first node with the second node.
+void AnyList::swapFirstSercond()
+{
+	Node* second = first->getNext();
+	first->setNext(second->getNext());
+	second->setNext(first);
+	first = second;
+}
+
+// 22. Swap the first node with the node before last.
+// void AnyList::swapFirsAndBeforeLast()
+// {
+// 	Node* beforeLast = first->getNext();
+// 	Node* temp = first;
+
+// 	while(beforeLast->getNext()->getNext() != nullptr)
+// 	{
+// 		beforeLast = beforeLast->getNext();
+// 		temp = temp->getNext();
+// 	}
+// 	first->setNext(beforeLast->getNext());
+// 	temp->setNext(temp);
+
+// 	// first = beforeLast;
+
+// }
+
 void AnyList::print() const
 {
 	if (first == nullptr) 

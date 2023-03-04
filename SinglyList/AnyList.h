@@ -56,6 +56,12 @@ class AnyList
 		// 18. Swap the first node with the last node.
 		void swapFirstLast();
 
+		// 20. Swap the first node with the second node.
+		void swapFirstSercond();
+
+		// 22. Swap the first node with the node before last.
+		void swapFirsAndBeforeLast();
+
 		void print() const;
 
 		void clearList();
