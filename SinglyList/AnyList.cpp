@@ -174,6 +174,27 @@ void AnyList::swapFirstSercond()
 
 // }
 
+
+// Lab 3
+void AnyList::rotateNodesLeft(int numOfTimes)
+{
+	for(int i = 0; i < numOfTimes; ++i)
+	{
+		Node* last = first;
+		Node* second = first->getNext();
+
+		while(last->getNext() != nullptr)
+		{
+			last = last->getNext();
+		}
+
+		first->setNext(nullptr);
+		last->setNext(first);
+		
+		first = second;
+	}
+}
+
 void AnyList::print() const
 {
 	if (first == nullptr) 
