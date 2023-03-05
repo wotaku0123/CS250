@@ -106,7 +106,7 @@ int main(){
 
     cout << " " << endl;
 
-    intList.swapCallingFirstAndParameterLast(dllList);
+    intList.swapCallingFirstAndParameterSecond(dllList);
 
     cout << "The intList has ";
     intList.printForward();

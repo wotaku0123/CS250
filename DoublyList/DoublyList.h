@@ -41,6 +41,10 @@ public:
 	// 40. Swap the value of the first node of the calling object with the value of the last node of the parameter object.
 	void swapCallingFirstAndParameterLast(DoublyList&);
 
+	// 42. Swap the value of the first node of the calling object with the value of the second node of the parameter object.
+	void swapCallingFirstAndParameterSecond(DoublyList&);
+
+
 	// lab 3
 	void rotateNodesRight(int);
 	
