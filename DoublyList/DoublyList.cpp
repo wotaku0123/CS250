@@ -89,6 +89,23 @@ void DoublyList::rotateNodesRight(int numOfTimes)
     }
 }
 
+// 40. Swap the value of the first node of the calling object with the value of the last node of the parameter object.
+void DoublyList::swapCallingFirstAndParameterLast(DoublyList& doublyList)
+{
+    DLLNode* current = first->getNext();
+    first->setNext(nullptr);
+    current->setPrev(doublyList.last);
+    doublyList.last->setNext(current);
+
+    doublyList.last->getPrev()->setNext(first);
+    first->setPrev(doublyList.last->getPrev());
+
+    current = current->getPrev();
+
+    doublyList.last  = first;
+    first = current;
+}
+
 void DoublyList::clearList()
 { 	
     DLLNode* temp = first;
