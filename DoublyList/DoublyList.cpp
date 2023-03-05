@@ -44,6 +44,22 @@ void DoublyList::printReverse() const
     }
 }
 
+// 24. Swap the second node with the last node.
+void DoublyList::swapSecondLast()
+{
+    DLLNode* temp = last;
+    DLLNode* second = first->getNext();
+
+    last->setPrev(first);
+    last->setNext(second->getNext());
+    first->setNext(temp);
+    second->getNext()->setPrev(temp);
+
+    second->setNext(nullptr);
+    second->setPrev(last->getPrev());
+    last->getPrev()->setNext(second);
+}
+
 // 38. Swap the value of the first node of the calling object with the value of the first node of the parameter object
 void DoublyList::swapFirstValueOfCallAndParam(DoublyList& doublyList)
 {
@@ -52,6 +68,25 @@ void DoublyList::swapFirstValueOfCallAndParam(DoublyList& doublyList)
     first->setData(doublyList.first->getData());
     doublyList.first->setData(temp);
     
+}
+
+// lab 3
+void DoublyList::rotateNodesRight(int numOfTimes)
+{
+    for(int i = 0; i < numOfTimes; ++i)
+    {
+        DLLNode* beforeLast = last->getPrev();
+
+        beforeLast->setNext(nullptr);
+        last->setPrev(nullptr);
+
+        last->setNext(first);
+        first->setPrev(last);
+
+        first = last;
+        last = beforeLast;
+
+    }
 }
 
 void DoublyList::clearList()

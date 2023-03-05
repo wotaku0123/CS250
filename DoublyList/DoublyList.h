@@ -32,9 +32,14 @@ public:
 
 	void printForward() const;
 	void printReverse() const;
+	// 24. Swap the second node with the last node.
+	void swapSecondLast();
 
 	// 38. Swap the value of the first node of the calling object with the value of the first node of the parameter object
 	void swapFirstValueOfCallAndParam(DoublyList&);
+
+	// lab 3
+	void rotateNodesRight(int);
 	
 	void clearList();
 	~DoublyList();
