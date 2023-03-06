@@ -71,6 +71,9 @@ class AnyList
 		// 46. Swap the value of the second node of the calling object with the value of the first node of the parameter object.
 		void swapCallingSecondAndParameterFirst(AnyList&);
 
+		// 68. Swap the value of the node before last of the calling object with the value of the before last of the parameter object.
+		void swapCallingBeforeLastAndParameterBeforeLast(AnyList&);
+
 		// 76. Swap the value of the node before last of the calling object with the value of the second node of the parameter object.
 		void swapCallingBeforeLastAndParametersecond(AnyList&);
 

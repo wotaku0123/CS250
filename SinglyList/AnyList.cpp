@@ -209,6 +209,37 @@ void AnyList::swapCallingSecondAndParameterFirst(AnyList& anyList)
 	anyList.first = trailNode;
 }
 
+// 68. Swap the value of the node before last of the calling object with the value of the before last of the parameter object.
+void AnyList::swapCallingBeforeLastAndParameterBeforeLast(AnyList& anyList)
+{
+	Node* trailNode = first;
+	Node* current = trailNode->getNext();
+
+	Node* temp = anyList.first;
+	Node* paramCurrent = temp->getNext();
+
+	while(current->getNext()->getNext() != nullptr)
+	{
+		trailNode = trailNode->getNext();
+		current = current->getNext();
+	}
+
+	while(paramCurrent->getNext()->getNext() != nullptr)
+	{
+		temp = temp->getNext();
+		paramCurrent = paramCurrent->getNext();
+	}
+
+	trailNode->setNext(paramCurrent);
+	temp->setNext(current);
+
+	temp = paramCurrent->getNext();
+
+	paramCurrent->setNext(current->getNext());
+	current->setNext(temp);
+
+}
+
 // 76. Swap the value of the node before last of the calling object with the value of the second node of the parameter object.
 void AnyList::swapCallingBeforeLastAndParametersecond(AnyList& anyList) 
 {
