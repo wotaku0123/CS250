@@ -39,6 +39,9 @@ public:
 	// 24. Swap the second node with the last node.
 	void swapSecondLast();
 
+	// 35. Rotate a list to the left (or right) by rotating the nodes. You will need to reset pointers.
+	void rotateLeft();
+
 	// 38. Swap the value of the first node of the calling object with the value of the first node of the parameter object
 	void swapFirstValueOfCallAndParam(DoublyList&);
 
@@ -53,13 +56,12 @@ public:
 
 	// 66. Swap the value of the node before last of the calling object with the value of the second node of the parameter object.
 	void swapCallingBeforeLastParameterSecond(DoublyList&);
-	
 
 	// 80. Swap calling object and parameter object. Think how to implement this one efficiently without any loops.
 	void swapCallingAndParameter(DoublyList&);
 
 	// Lab 2, delete every 3 numbers and get the dinner
-	void DoublyList::selectSuitor();
+	void selectSuitor();
 
 
 	// lab 3
@@ -68,7 +70,7 @@ public:
 	void clearList();
 	~DoublyList();
 
-	void selectSuitor();
+	// void selectSuitor();
 
 private:
     // Pointer to the first node in the list.

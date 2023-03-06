@@ -72,7 +72,18 @@ void DoublyList::swapSecondLast()
     second->setPrev(last->getPrev());
     last->getPrev()->setNext(second);
 }
+// 35. Rotate a list to the left (or right) by rotating the nodes. You will need to reset pointers.
+void DoublyList::rotateLeft()
+{
+    DLLNode* current = first->getNext();
 
+    last->setNext(first);
+    first->setPrev(last);
+    first->setNext(nullptr);
+
+    last = first;
+    first = current;
+}
 // 38. Swap the value of the first node of the calling object with the value of the first node of the parameter object
 void DoublyList::swapFirstValueOfCallAndParam(DoublyList& doublyList)
 {
@@ -174,6 +185,7 @@ void DoublyList::swapCallingBeforeLastParameterSecond(DoublyList& doublyList)
 
 }
 
+
 // 80. Swap calling object and parameter object. Think how to implement this one efficiently without any loops.
 void DoublyList::swapCallingAndParameter(DoublyList& doublyList)
 {
@@ -246,39 +258,39 @@ DoublyList::~DoublyList()
         clearList();
 }
 
-void DoublyList::selectSuitor()
-{
-   first->setPrev(last);
-   last->setNext(first);
-   DLLNode* current = first;
+// void DoublyList::selectSuitor()
+// {
+//    first->setPrev(last);
+//    last->setNext(first);
+//    DLLNode* current = first;
    
-   while(count > 1)
-   {
+//    while(count > 1)
+//    {
       
-      for(int i = 0; i < 2; ++i)
-      {
-         current = current->getNext();
-      }
-      cout << endl;
-      cout << "Suitor " << current->getData() << " will be eliminated!";
-      current->getPrev()->setNext(current->getNext());
-      current->getNext()->setPrev(current->getPrev());
+//       for(int i = 0; i < 2; ++i)
+//       {
+//          current = current->getNext();
+//       }
+//       cout << endl;
+//       cout << "Suitor " << current->getData() << " will be eliminated!";
+//       current->getPrev()->setNext(current->getNext());
+//       current->getNext()->setPrev(current->getPrev());
       
-      DLLNode *nodeToDelete = current;
-      delete nodeToDelete;
-      nodeToDelete = nullptr;
+//       DLLNode *nodeToDelete = current;
+//       delete nodeToDelete;
+//       nodeToDelete = nullptr;
       
-      if(count > 1) current = current->getNext();
-      --count;
+//       if(count > 1) current = current->getNext();
+//       --count;
       
-   }
+//    }
    
-   first = current;
-   last = current;
-   first->setPrev(nullptr);
-   last->setNext(nullptr);
+//    first = current;
+//    last = current;
+//    first->setPrev(nullptr);
+//    last->setNext(nullptr);
    
-}
+// }
 
 
 
