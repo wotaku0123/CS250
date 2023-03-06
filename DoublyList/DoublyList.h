@@ -35,7 +35,7 @@ public:
 
 	// 10. Delete the node before-last of the calling object.
 	void deleteBeforeLast();
-	
+
 	// 24. Swap the second node with the last node.
 	void swapSecondLast();
 
@@ -57,6 +57,9 @@ public:
 
 	// 80. Swap calling object and parameter object. Think how to implement this one efficiently without any loops.
 	void swapCallingAndParameter(DoublyList&);
+
+	// Lab 2, delete every 3 numbers and get the dinner
+	void DoublyList::selectSuitor();
 
 
 	// lab 3

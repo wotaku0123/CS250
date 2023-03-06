@@ -188,6 +188,42 @@ void DoublyList::swapCallingAndParameter(DoublyList& doublyList)
     temp = nullptr;
 }
 
+// Lab 2, delete every 3 numbers and get the dinner
+void DoublyList::selectSuitor()
+{
+   first->setPrev(last);
+   last->setNext(first);
+   
+   DLLNode* current = first;
+   
+   while(count > 1)
+   {
+      for(int i = 0; i < 2; ++i)
+      {
+         current = current->getNext();
+      }
+      
+      cout << "\nSuitor " << current->getData() << " will be eliminated!";
+      
+      current->getPrev()->setNext(current->getNext());
+      current->getNext()->setPrev(current->getPrev());
+      
+      DLLNode* currentNext = current->getNext();
+      
+      delete current;
+      current = currentNext;
+      
+      --count;
+   }
+   
+   first = current;
+   last = current;
+   
+   first->setNext(nullptr);
+   last->setPrev(nullptr);
+   
+}
+
 void DoublyList::clearList()
 { 	
     DLLNode* temp = first;
