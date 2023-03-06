@@ -142,6 +142,25 @@ void DoublyList::swapCallingFirstAndParameterBeforeLast(DoublyList& doublyList)
     first = beforeLast;
 }
 
+// 66. Swap the value of the node before last of the calling object with the value of the second node of the parameter object.
+void DoublyList::swapCallingBeforeLastParameterSecond(DoublyList& doublyList)
+{
+    DLLNode* beforeLast = last->getPrev();
+    DLLNode* second = doublyList.first->getNext();
+
+    doublyList.first->setNext(beforeLast);
+    beforeLast->setNext(second->getNext());
+    beforeLast->getNext()->setPrev(second);
+
+    second->setPrev(beforeLast->getPrev());
+    beforeLast->getPrev()->setNext(second);
+    second->setNext(last);
+
+    last->setPrev(second);
+    beforeLast->setPrev(doublyList.first);
+
+}
+
 // 80. Swap calling object and parameter object. Think how to implement this one efficiently without any loops.
 void DoublyList::swapCallingAndParameter(DoublyList& doublyList)
 {
