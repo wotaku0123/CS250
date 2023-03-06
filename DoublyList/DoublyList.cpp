@@ -142,6 +142,20 @@ void DoublyList::swapCallingFirstAndParameterBeforeLast(DoublyList& doublyList)
     first = beforeLast;
 }
 
+// 80. Swap calling object and parameter object. Think how to implement this one efficiently without any loops.
+void DoublyList::swapCallingAndParameter(DoublyList& doublyList)
+{
+    DLLNode* temp = first;
+    first = doublyList.first;
+    doublyList.first = temp;
+
+    temp = last;
+    last = doublyList.last;
+    doublyList.last = temp;
+
+    temp = nullptr;
+}
+
 void DoublyList::clearList()
 { 	
     DLLNode* temp = first;

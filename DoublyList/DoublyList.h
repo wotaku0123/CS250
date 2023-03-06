@@ -47,6 +47,11 @@ public:
 	// 44. Swap the value of the first node of the calling object with the value of the before last of the parameter object.
 	void swapCallingFirstAndParameterBeforeLast(DoublyList&);
 
+	
+
+	// 80. Swap calling object and parameter object. Think how to implement this one efficiently without any loops.
+	void swapCallingAndParameter(DoublyList&);
+
 
 	// lab 3
 	void rotateNodesRight(int);
