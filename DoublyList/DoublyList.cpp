@@ -44,6 +44,19 @@ void DoublyList::printReverse() const
     }
 }
 
+// 10. Delete the node before-last of the calling object.
+void DoublyList::deleteBeforeLast()
+{
+    DLLNode* current = last->getPrev();
+    current->getPrev()->setNext(last);
+    last->setPrev(current->getPrev());
+
+    delete current;
+    current = nullptr;
+
+    --count;
+}
+
 // 24. Swap the second node with the last node.
 void DoublyList::swapSecondLast()
 {

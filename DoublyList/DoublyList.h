@@ -32,6 +32,10 @@ public:
 
 	void printForward() const;
 	void printReverse() const;
+
+	// 10. Delete the node before-last of the calling object.
+	void deleteBeforeLast();
+	
 	// 24. Swap the second node with the last node.
 	void swapSecondLast();
 
